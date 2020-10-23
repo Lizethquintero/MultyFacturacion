@@ -264,9 +264,6 @@ class AccountMove(models.Model):
             return mapping
 
         move_vals = self.with_context(include_business_fields=True).copy_data(default=default_values)[0]
-        _logger.info('_reverse_move_valsnuevo')
-        _logger.info(move_vals)
-        _logger.info(default_values)
 
         tax_repartition_lines_mapping = compute_tax_repartition_lines_mapping2(move_vals)
 
